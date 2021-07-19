@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">SixtApp</string>
+
+    <!-- car_item concatenation strings -->
+    <string name="car_brand_model_concatenation">%1$s %2$s</string>
+    <string name="car_owner_name">Owner: %1$s</string>
+    <string name="car_color">Color: %1$s</string>
+    <string name="car_cleanliness">Cleanliness: %1$s</string>
+    <string name="car_license_plate">License plate: %1$s</string>
+
+    <!-- car item placeholder text -->
+    <string name="car_fuel_level_default_text">Fuel level: </string>
+    <string name="car_license_plate_default_text">License plate: </string>
+    <string name="reserve_button">Reserve</string>
+    <string name="car_color_default_text">"Color: "</string>
+    <string name="car_cleanliness_default_text">"Cleanliness: "</string>
+    <string name="car_brandandmodel_default_text">BrandAndModel</string>
+    <string name="car_name_default_text">Name</string>
+
+    <string name="mapKey" translatable="false" templateMergeStrategy="preserve">AIzaSyDciu1EjLyhj-P_14LBaHyrO-toZT-hN1M</string>
+    <string name="cars_tab_placeholder_default_text">Cars</string>
+    <string name="map_tab_placeholder_default_text">Map View</string>
+</resources>
