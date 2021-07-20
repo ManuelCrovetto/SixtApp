@@ -67,7 +67,7 @@ class CarViewHolder(itemView: View, private val notifyItemHasChangedListener: No
 
     private fun setUpCopies(details: CarDetails) {
         binding.tvBrandAndModel.text = context.getString(R.string.car_brand_model_concatenation, details.make, details.modelName)
-        binding.tvName.text = context.getString(R.string.car_owner_name, details.name)
+        binding.tvOwnersName.text = context.getString(R.string.car_owner_name, details.name)
         binding.tvCarColor.text = context.getString(R.string.car_color, details.color)
         binding.tvCleanliness.text = context.getString(R.string.car_cleanliness, details.innerCleanliness)
         binding.tvLicensePlate.text = context.getString(R.string.car_license_plate, details.licensePlate)
