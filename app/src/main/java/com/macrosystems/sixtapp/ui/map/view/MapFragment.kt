@@ -10,7 +10,7 @@ import android.view.Window
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -26,22 +26,20 @@ import com.macrosystems.sixtapp.ui.core.dialogs.ErrorDialog
 import com.macrosystems.sixtapp.ui.core.dialogs.dialogifcs.OnClickDialog
 import com.macrosystems.sixtapp.ui.core.ifcs.AppListener
 import com.macrosystems.sixtapp.ui.list.viewmodel.ListFragmentViewModel
-import com.macrosystems.sixtapp.ui.viewmodel.factory.ListFragmentViewModelFactory
-import org.kodein.di.KodeinAware
-import org.kodein.di.android.x.kodein
-import org.kodein.di.generic.instance
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-class MapFragment : Fragment(), KodeinAware, OnMapReadyCallback, AppListener {
-    override val kodein by kodein()
-    private val factory: ListFragmentViewModelFactory by instance()
+@AndroidEntryPoint
+class MapFragment : Fragment(), OnMapReadyCallback, AppListener {
+
+    private val viewModel: ListFragmentViewModel by viewModels()
 
     private var _binding: MapFragmentBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var connectionStatusLiveData: ConnectionStatusLiveData
+    @Inject
+    lateinit var connectionStatusLiveData: ConnectionStatusLiveData
     private var isConnected = true
-
-    private lateinit var viewModel: ListFragmentViewModel
 
     private lateinit var map: GoogleMap
     private val markerOptions = MarkerOptions()
@@ -52,18 +50,14 @@ class MapFragment : Fragment(), KodeinAware, OnMapReadyCallback, AppListener {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         val map = childFragmentManager.findFragmentById(R.id.mapView) as SupportMapFragment
         map.getMapAsync(this)
 
-
-        connectionStatusLiveData = ConnectionStatusLiveData(requireContext())
         connectionStatusLiveData.observe(requireActivity(), {
             if (!it) {
                 isConnected = false
             } else {
                 if (!isConnected) {
-
                     viewModel.getCarDetails()
                     isConnected = true
                 }
@@ -71,14 +65,12 @@ class MapFragment : Fragment(), KodeinAware, OnMapReadyCallback, AppListener {
         })
     }
 
-
     override fun onMapReady(gMap: GoogleMap) {
         map = gMap
         setUpViewModel()
     }
 
     private fun setUpViewModel() {
-        viewModel = ViewModelProvider(this, factory).get(ListFragmentViewModel::class.java)
         viewModel.listener = this
         viewModel.getCarDetails()
         viewModel.carDetails.observe(viewLifecycleOwner, { locations->
@@ -86,10 +78,10 @@ class MapFragment : Fragment(), KodeinAware, OnMapReadyCallback, AppListener {
         })
     }
 
-    private fun setMap(it: List<CarDetails>?) {
-        if (it != null){
+    private fun setMap(carList: List<CarDetails>?) {
+        if (carList != null){
             val builder = LatLngBounds.Builder()
-            for (car in it){
+            for (car in carList){
                 val loc = LatLng(car.latitude!!, car.longitude!!)
                 with(markerOptions){
                     position(loc)

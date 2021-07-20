@@ -13,11 +13,11 @@ import com.bumptech.glide.request.target.Target
 import com.macrosystems.sixtapp.R
 import com.macrosystems.sixtapp.data.model.CarDetails
 import com.macrosystems.sixtapp.databinding.CardetailsItemBinding
-import com.macrosystems.sixtapp.ui.list.rvadapters.ifcs.Notify
+import com.macrosystems.sixtapp.ui.list.rvadapters.ifcs.NotifyItemHasChangedListener
 
 const val SIXT_URL = "https://www.sixt.com/"
 
-class CarViewHolder(itemView: View, private val notify: Notify) : RecyclerView.ViewHolder(itemView) {
+class CarViewHolder(itemView: View, private val notifyItemHasChangedListener: NotifyItemHasChangedListener) : RecyclerView.ViewHolder(itemView) {
     private val binding = CardetailsItemBinding.bind(itemView)
     private val context = binding.viewParent.context
 
@@ -79,7 +79,9 @@ class CarViewHolder(itemView: View, private val notify: Notify) : RecyclerView.V
 
     private fun onItemViewSelected(details: CarDetails) {
         details.isExpanded = !details.isExpanded
-        notify.itemHasChanged(adapterPosition)
+
+        if (adapterPosition != RecyclerView.NO_POSITION)
+            notifyItemHasChangedListener.itemHasChanged(adapterPosition)
     }
 
     private fun onReserveSelected() {

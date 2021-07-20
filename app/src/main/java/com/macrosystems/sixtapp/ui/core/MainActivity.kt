@@ -11,11 +11,15 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.snackbar.Snackbar
 import com.macrosystems.sixtapp.R
 import com.macrosystems.sixtapp.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
-    private lateinit var connectionStatusLiveData: ConnectionStatusLiveData
+    @Inject
+    lateinit var connectionStatusLiveData: ConnectionStatusLiveData
     private var isConnected = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +27,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        connectionStatusLiveData = ConnectionStatusLiveData(this)
         connectionStatusLiveData.observe(this, { status->
             if (!status){
                 isConnected = false

@@ -9,12 +9,7 @@
         android:id="@+id/listFragment"
         android:name="com.macrosystems.sixtapp.ui.list.view.ListFragment"
         android:label="ListFragment"
-        tools:layout="@layout/car_list">
-        <action
-            android:id="@+id/action_listFragment_to_mapFragment"
-            app:destination="@id/mapFragment"
-            app:popUpTo="@id/listFragment" />
-    </fragment>
+        tools:layout="@layout/car_list"/>
     <fragment
         android:id="@+id/mapFragment"
         android:name="com.macrosystems.sixtapp.ui.map.view.MapFragment"

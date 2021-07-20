@@ -6,9 +6,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.macrosystems.sixtapp.R
 import com.macrosystems.sixtapp.data.model.CarDetails
-import com.macrosystems.sixtapp.ui.list.rvadapters.ifcs.Notify
+import com.macrosystems.sixtapp.ui.list.rvadapters.ifcs.NotifyItemHasChangedListener
 
-class CarsRVAdapter : RecyclerView.Adapter<CarViewHolder>(), Notify {
+class CarsRVAdapter : RecyclerView.Adapter<CarViewHolder>(), NotifyItemHasChangedListener {
 
     private var dataList = ArrayList<CarDetails>()
 

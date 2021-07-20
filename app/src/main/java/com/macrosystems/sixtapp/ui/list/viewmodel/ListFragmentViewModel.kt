@@ -4,14 +4,17 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.macrosystems.sixtapp.data.model.CarDetails
-import com.macrosystems.sixtapp.data.network.CarDetailsSource
+import com.macrosystems.sixtapp.data.network.CarRepository
 import com.macrosystems.sixtapp.ui.core.ifcs.AppListener
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import com.macrosystems.sixtapp.data.network.Result
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class ListFragmentViewModel(private val repo: CarDetailsSource) : ViewModel() {
+@HiltViewModel
+class ListFragmentViewModel @Inject constructor(private val repo: CarRepository) : ViewModel() {
 
     var listener: AppListener? = null
     val carDetails: MutableLiveData<List<CarDetails>> = MutableLiveData()
@@ -36,6 +39,5 @@ class ListFragmentViewModel(private val repo: CarDetailsSource) : ViewModel() {
                 }
             }
         }
-
     }
 }
