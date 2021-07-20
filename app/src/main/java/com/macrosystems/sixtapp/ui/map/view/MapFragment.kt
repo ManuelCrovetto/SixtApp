@@ -63,6 +63,7 @@ class MapFragment : Fragment(), KodeinAware, OnMapReadyCallback, AppListener {
                 isConnected = false
             } else {
                 if (!isConnected) {
+
                     viewModel.getCarDetails()
                     isConnected = true
                 }

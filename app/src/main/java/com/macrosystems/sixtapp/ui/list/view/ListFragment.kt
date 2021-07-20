@@ -7,11 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
+
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+
 import com.macrosystems.sixtapp.databinding.CarListBinding
 import com.macrosystems.sixtapp.ui.core.ConnectionStatusLiveData
 import com.macrosystems.sixtapp.ui.core.dialogs.ErrorDialog
@@ -20,6 +22,7 @@ import com.macrosystems.sixtapp.ui.core.ifcs.AppListener
 import com.macrosystems.sixtapp.ui.list.viewmodel.ListFragmentViewModel
 import com.macrosystems.sixtapp.ui.viewmodel.factory.ListFragmentViewModelFactory
 import com.macrosystems.sixtapp.ui.list.rvadapters.CarsRVAdapter
+
 
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.kodein
@@ -36,7 +39,6 @@ class ListFragment : Fragment(), KodeinAware, AppListener {
 
     private lateinit var connectionStatusLiveData: ConnectionStatusLiveData
     private var isConnected = true
-
 
 
     private lateinit var adapter: CarsRVAdapter
@@ -66,6 +68,7 @@ class ListFragment : Fragment(), KodeinAware, AppListener {
                 isConnected = false
             } else {
                 if (!isConnected) {
+
                     viewModel.getCarDetails()
                     isConnected = true
                 }

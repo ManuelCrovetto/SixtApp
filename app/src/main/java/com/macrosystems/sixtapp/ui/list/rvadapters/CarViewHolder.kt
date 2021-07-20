@@ -77,8 +77,8 @@ class CarViewHolder(itemView: View, private val notify: Notify) : RecyclerView.V
         binding.btnReserve.visibility = if (isExpandable) View.VISIBLE else View.GONE
     }
 
-    private fun onItemViewSelected(expanded: CarDetails) {
-        expanded.isExpanded = !expanded.isExpanded
+    private fun onItemViewSelected(details: CarDetails) {
+        details.isExpanded = !details.isExpanded
         notify.itemHasChanged(adapterPosition)
     }
 
