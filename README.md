@@ -26,7 +26,7 @@
   
   * Coroutines in this case is used to execute a REST API call in secondary threads, preventing blocking the main-thread (UI), which would produce ANRs errors.
   
-  * Google Maps & Play Services within this context it will render the map and mark the cars location in map.
+  * Google Maps & Play Services within this context it will render the map and mark the cars locations in map.
   
   * Glide as Image Loader will execute the task of loading the URL images into the desired view, plus will help us to comprove if there is any loadError such as 404 error, in that case
   a fallback image will be loaded.
