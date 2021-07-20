@@ -14,7 +14,7 @@
   
   * Jetpack ViewModel is implemented to save and manage UI related data in the App Lifecycle, this class allows to keep data to survive different configurations
                       such as screen rotations. <br><br>@IMPORTANT VIEWMODEL NOTE: as the app required only needs one function to be called from ViewModel, I decided to implement only one
-                      ViewModel class and not two as it should be due to the Clean Code Values.
+                      ViewModel class and not two as it should be due to the Clean Code Values.<br>
                       
   * Jetpack Navigation Component is implemented for its dynamism to navigate through fragments, handles an organized backStack, animations, and fragment transactions
                       pretty well clean.
