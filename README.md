@@ -24,7 +24,7 @@
   
   * Retrofit REST API Calls is used in this context to fetch JSON in the endpoint provided, fetching the response body will be serialized in an object class.
   
-  * Coroutines in this case is used to execute a REST API in secondary threads, preventing blocking the main-thread (UI), which would produce ANRs errors.
+  * Coroutines in this case is used to execute a REST API call in secondary threads, preventing blocking the main-thread (UI), which would produce ANRs errors.
   
   * Google Maps & Play Services within this context it will render the map and mark the cars location in map.
   
