@@ -17,7 +17,13 @@
     <string name="car_brandandmodel_default_text">BrandAndModel</string>
     <string name="car_name_default_text">Name</string>
 
+    <!-- connection status snackbar text -->
+    <string name="lost_connection_default_text">Connection lost. Reconnecting… </string>
+    <string name="connected_successfully_default_text">Connected</string>
+
     <string name="mapKey" translatable="false" templateMergeStrategy="preserve">AIzaSyDciu1EjLyhj-P_14LBaHyrO-toZT-hN1M</string>
     <string name="cars_tab_placeholder_default_text">Cars</string>
     <string name="map_tab_placeholder_default_text">Map View</string>
+    <string name="error_dialog_text_default_placeholder">Oops, an error occurred, try again later please!</string>
+    <string name="ok_text_default_button_placeholder">OK</string>
 </resources>

@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SixtApp">
         <meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/mapKey"/>
-        <activity android:name=".ui.view.MainActivity">
+        <activity android:name=".ui.core.MainActivity"
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

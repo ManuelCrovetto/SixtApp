@@ -1,6 +1,5 @@
 package com.macrosystems.sixtapp.data.model
 
-import android.net.Uri
 import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 

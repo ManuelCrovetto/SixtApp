@@ -9,14 +9,14 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
-    //adding Data Binding Feature
-    buildFeatures{
-        dataBinding = true
+    //adding View Binding Feature
+    viewBinding{
+        enabled = true
     }
 
     defaultConfig {
         applicationId "com.macrosystems.sixtapp"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -27,7 +27,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -66,13 +66,9 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
 
     //Kodein
-    implementation 'org.kodein.di:kodein-di-generic-jvm:6.2.1'
-    implementation "org.kodein.di:kodein-di-framework-android-x:6.3.2"
+    implementation 'org.kodein.di:kodein-di-generic-jvm:6.5.0'
+    implementation "org.kodein.di:kodein-di-framework-android-x:6.5.0"
 
-    //Room Persistence
-    def room_version = "2.3.0"
-    implementation "androidx.room:room-runtime:$room_version"
-    annotationProcessor "androidx.room:room-compiler:$room_version"
 
     //RetroFit
     implementation 'com.squareup.retrofit2:retrofit:2.6.2'
@@ -89,14 +85,9 @@ dependencies {
     implementation 'com.google.maps.android:maps-utils-ktx:2.4.0'
     implementation 'com.google.android.gms:play-services-maps:17.0.1'
     implementation 'com.google.android.gms:play-services-location:18.0.0'
-
-    //CircleImageView
-    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    
 
     //glide
     implementation 'com.github.bumptech.glide:glide:4.12.0'
 
-    //RXJava
-    implementation "io.reactivex.rxjava2:rxjava:2.2.9"
-    implementation "io.reactivex.rxjava2:rxandroid:2.1.0"
 }

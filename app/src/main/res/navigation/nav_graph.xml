@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.macrosystems.sixtapp.ui.view.ListFragment"
+        android:name="com.macrosystems.sixtapp.ui.list.view.ListFragment"
         android:label="ListFragment"
         tools:layout="@layout/car_list">
         <action
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/mapFragment"
-        android:name="com.macrosystems.sixtapp.ui.view.MapFragment"
+        android:name="com.macrosystems.sixtapp.ui.map.view.MapFragment"
         android:label="MapFragment"
         tools:layout="@layout/map_fragment"/>
 </navigation>
