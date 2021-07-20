@@ -39,12 +39,4 @@
   
   * Espresso Testing Dependencies predictable and easy to use testing dependency, reduced distraction because its low boilerplate content. In this case I have tested some of the recyclerView 
   behavior.
-  
-  
-  
-  
-  
-  
-  
-  
-  DO NOT FORGET TO EXPLAIN WHY THERES ONE VIEWMODEL
+
