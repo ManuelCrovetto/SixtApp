@@ -33,11 +33,10 @@
   
   * Activity KTX & Fragment KTX will allow us to write more concise and idiomatic code such as "by viewModel"... etc.
   
-  * Dagger Hilt for Dependency Injection, candy of the app, defining the modules, we will be able to create our singletons and provide them anywhere we want, makins classes independent of its dependencies,
-  which will let us to create much more modular code, being able to replace dependencies without changing the class itself, in this case
+  * Dagger Hilt for Dependency Injection, candy of the app, defining the modules, we will be able to create our singletons and provide them anywhere we want, making classes independent from its dependencies,
+  which will let us to create much more modular code, being able to replace dependencies without the risk of changing the class itself, in this case
   is responsible to provide the singleton of the REST API Call (Retrofit) and the CarRepository as it is an interface will return us the class where is implemented. I selected Dagger Hilt 
   for its simplicity and dynamism to inject dependencies.
   
-  * Espresso Testing Dependencies predictable and easy to use testing dependency, reduced distraction because its low boilerplate content. In this case I have tested some of the recyclerView 
-  behavior.
+  * Espresso Testing Dependencies predictable and easy to use testing dependency, reduced distraction because its low boilerplate content. In this case I have tested some recyclerView functions.
 
