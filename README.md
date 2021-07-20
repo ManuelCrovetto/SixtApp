@@ -20,6 +20,7 @@
                       pretty well clean.
                       
   * Jetpack LiveData, implemented to observe real time live-data from API calls in ViewModel, in this context it will update our UI with new data state as there are changes in the DB.
+  * Jetpack ViewBinding allows to access all views in a simple way reducing a lot of boilerplate and time.
   
   * Retrofit REST API Calls is used in this context to fetch JSON in the endpoint provided, fetching the response body will be serialized in an object class.
   
