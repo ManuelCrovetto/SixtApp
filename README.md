@@ -21,7 +21,7 @@
                       
   * Jetpack LiveData, implemented to observe real time live-data from API calls in ViewModel, in this context it will update our UI with new data state as there are changes in the DB.
   
-  * Retrofit REST API Calls is used in this context to fetch JSON located in the endpoint provided, fetching the response body will be serialized in an object class.
+  * Retrofit REST API Calls is used in this context to fetch JSON in the endpoint provided, fetching the response body will be serialized in an object class.
   
   * Coroutines in this case is used to execute a REST API in secondary threads, preventing blocking the main-thread (UI), which would produce ANRs errors.
   
