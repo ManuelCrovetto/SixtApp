@@ -28,7 +28,7 @@
   
   * Google Maps & Play Services within this context it will render the map and mark the cars locations in the map.
   
-  * Glide as Image Loader will execute the task of loading the URL images into the desired view, plus will help us to comprove if there is any loadError such as 404 error, in that case
+  * Glide as Image Loader will execute the task of loading the URL images into the desired view, plus will help us to check if there is any loadError such as 404 error, in that case
   a fallback image will be loaded.
   
   * Activity KTX & Fragment KTX will allow us to write more concise and idiomatic code such as "by viewModel"... etc.
