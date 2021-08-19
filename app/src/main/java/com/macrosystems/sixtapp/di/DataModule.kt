@@ -11,6 +11,7 @@ import dagger.hilt.components.SingletonComponent
 @Module
 @InstallIn(SingletonComponent::class)
 object DataModule {
+
     @Provides
     fun provideCarRepository(carApi: CarApi): CarRepository{
         return CarRepositoryImpl(carApi)

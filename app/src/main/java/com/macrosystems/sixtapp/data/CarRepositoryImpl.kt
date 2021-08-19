@@ -26,6 +26,7 @@ class CarRepositoryImpl @Inject constructor(private val carApi: CarApi) : CarRep
         } catch (e: Exception){
             return Result.OnError(e)
         }
+
     }
 
 }

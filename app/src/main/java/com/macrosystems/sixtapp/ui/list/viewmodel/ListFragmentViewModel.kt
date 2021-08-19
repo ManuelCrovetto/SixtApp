@@ -20,6 +20,7 @@ class ListFragmentViewModel @Inject constructor(private val repo: CarRepository)
     val carDetails: MutableLiveData<List<CarDetails>> = MutableLiveData()
 
     fun getCarDetails(){
+        
         listener?.onStarted()
         viewModelScope.launch {
             val result: Result<CarDetails> = withContext(Dispatchers.IO){
